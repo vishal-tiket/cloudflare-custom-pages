@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request Failed</title>
+    <style>
+      @font-face {
+        font-family: "TiketOdysseyText";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://storage.tiket.com/shared-components/fonts/TiketOdysseyText-Regular.woff2")
+            format("woff2"),
+          url("https://storage.tiket.com/shared-components/fonts/TiketOdysseyText-Regular.woff")
+            format("woff");
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "TiketOdysseyText";
+        font-style: normal;
+        font-weight: 700;
+        src: url("https://storage.tiket.com/shared-components/fonts/TiketOdysseyText-Bold.woff2")
+            format("woff2"),
+          url("https://storage.tiket.com/shared-components/fonts/TiketOdysseyText-Bold.woff")
+            format("woff");
+        font-display: swap;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: TiketOdysseyText, system-ui, -apple-system,
+          /* Firefox supports this but not yet `system-ui` */ "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; /* 2 */
+      }
+      * {
+        font: inherit;
+        line-height: 143%;
+      }
+      .header_container {
+        box-shadow: 0 2px 8px rgba(48, 49, 53, 0.16);
+        padding: 20px 0;
+        display: none;
+      }
+      .header_wrapper {
+        box-sizing: content-box;
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .hide {
+        display: none;
+      }
+      .image {
+        width: 320px;
+        height: 213px;
+      }
+      .content {
+        text-align: center;
+        margin-top: 24px;
+        max-width: 320px;
+      }
+      .title {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .description {
+        margin-top: 8px;
+        font-size: 16px;
+      }
+      .retry_btn {
+        background-color: #007cff;
+        color: #ffffff;
+        font-size: 16px;
+        border: 0;
+        border-radius: 8px;
+        width: 100%;
+        height: 48px;
+        margin-top: 24px;
+      }
+
+      .ray_id {
+        text-align: center;
+        color: #71747d;
+        font-size: 12px;
+        margin: 0;
+        padding: 8px 0;
+        background-color: #ececec;
+      }
+
+      .cf_container {
+        display: flex;
+        justify-content: center;
+        padding: 16px 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      .cf_captcha_box {
+        width: 320px;
+        position: relative;
+        border-radius: 8px;
+        height: 97px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .cf_captcha_box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 8px;
+        padding: 1px;
+        background: linear-gradient(90deg, #007bff 0%, #00c1eb 100%);
+        mask: linear-gradient(#ffffff 0 0) content-box,
+          linear-gradient(#ffffff 0 0);
+        mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+
+      .cf_captcha {
+        flex: 1;
+      }
+
+      @media (min-width: 840px) {
+        * {
+          line-height: 138%;
+        }
+        .header_container {
+          display: block;
+        }
+        .header_wrapper {
+          max-width: 760px;
+        }
+        .container {
+          flex-direction: row;
+          justify-content: center;
+          gap: 16px;
+          height: calc(100vh - 75.08px);
+        }
+        .content {
+          max-width: 424px;
+          text-align: start;
+          margin-top: 0;
+        }
+        .title {
+          font-size: 24px;
+        }
+
+        .description {
+          font-size: 18px;
+        }
+
+        .ray_id {
+          font-size: 14px;
+        }
+
+        .cf_container {
+          position: relative;
+          display: block;
+          text-align: center;
+        }
+      }
+      @media (min-width: 960px) {
+        .header_wrapper {
+          padding-left: 100px;
+          padding-right: 100px;
+          max-width: none;
+        }
+      }
+      @media (min-width: 1280px) {
+        .header_wrapper {
+          padding-left: 120px;
+          padding-right: 120px;
+        }
+      }
+
+      /* XXXLarge breakpoint */
+      @media (min-width: 1440px) {
+        .header_wrapper {
+          padding-left: 120px;
+          padding-right: 120px;
+          max-width: 1200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header_container">
+      <div class="header_wrapper">
+        <img
+          src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/original/test-discovery/2024/03/01/ac13e03e-896c-4bbb-ba7c-cdf9b04a68b7-1709290197088-cb26aa8c25b24b1aa5df8bb2edce7ea7.png"
+          height="30"
+          width="138"
+          alt="tiket-logo"
+        />
+      </div>
+    </div>
+    <div class="container">
+      <div class="hide">
+        ::CLOUDFLARE_ERROR_500S_BOX:: ::CLOUDFLARE_ERROR_1000S_BOX::
+      </div>
+      <image
+        src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/original/test-discovery/2025/05/16/e2c5d80e-b134-4b4e-8d44-4c060228f627-1747367609398-bd90a934500345a13331aacf0fdea0cb.png"
+        alt="Robot or human?"
+        class="image"
+      />
+      <div class="content">
+        <h2 class="title">Robot or human?</h2>
+        <div class="description">
+          Check the box below to verify that you are human.
+        </div>
+        <div class="cf_container">
+          <div class="cf_captcha_box">
+            <div class="cf_captcha">::CAPTCHA_BOX::</div>
+            <p class="cf_ray_id ray_id">Ray ID: ::RAY_ID::</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request Failed</title>
+    <style>
+      @font-face {
+        font-family: "TiketOdysseyText";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://storage.tiket.com/shared-components/fonts/TiketOdysseyText-Regular.woff2")
+            format("woff2"),
+          url("https://storage.tiket.com/shared-components/fonts/TiketOdysseyText-Regular.woff")
+            format("woff");
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "TiketOdysseyText";
+        font-style: normal;
+        font-weight: 700;
+        src: url("https://storage.tiket.com/shared-components/fonts/TiketOdysseyText-Bold.woff2")
+            format("woff2"),
+          url("https://storage.tiket.com/shared-components/fonts/TiketOdysseyText-Bold.woff")
+            format("woff");
+        font-display: swap;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: TiketOdysseyText, system-ui, -apple-system,
+          /* Firefox supports this but not yet `system-ui` */ "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; /* 2 */
+      }
+      * {
+        font: inherit;
+        line-height: 143%;
+      }
+      .header_container {
+        box-shadow: 0 2px 8px rgba(48, 49, 53, 0.16);
+        padding: 20px 0;
+        display: none;
+      }
+      .header_wrapper {
+        box-sizing: content-box;
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .hide {
+        display: none;
+      }
+      .image {
+        width: 320px;
+        height: 213px;
+      }
+      .content {
+        margin-top: 24px;
+        max-width: 320px;
+      }
+      .title {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        color: #303135;
+      }
+
+      .question {
+        font-size: 16px;
+        font-weight: 700;
+        color: #303135;
+        margin: 0;
+        margin-top: 16px;
+      }
+
+      .answer {
+        font-size: 14px;
+        margin-top: 8px;
+        color: #303135;
+        margin: 8px 0 0;
+      }
+
+      @media (min-width: 840px) {
+        * {
+          line-height: 138%;
+        }
+        .header_container {
+          display: block;
+        }
+        .header_wrapper {
+          max-width: 760px;
+        }
+        .container {
+          flex-direction: row;
+          justify-content: center;
+          gap: 16px;
+          height: calc(100vh - 75.08px);
+        }
+        .content {
+          max-width: 424px;
+          text-align: start;
+          margin-top: 0;
+        }
+        .title {
+          font-size: 24px;
+        }
+
+        .answer {
+          font-size: 14px;
+          margin-top: 4px;
+          color: #303135;
+        }
+      }
+
+      @media (min-width: 960px) {
+        .header_wrapper {
+          padding-left: 100px;
+          padding-right: 100px;
+          max-width: none;
+        }
+      }
+      @media (min-width: 1280px) {
+        .header_wrapper {
+          padding-left: 120px;
+          padding-right: 120px;
+        }
+      }
+
+      /* XXXLarge breakpoint */
+      @media (min-width: 1440px) {
+        .header_wrapper {
+          padding-left: 120px;
+          padding-right: 120px;
+          max-width: 1200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header_container">
+      <div class="header_wrapper">
+        <img
+          src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/original/test-discovery/2024/03/01/ac13e03e-896c-4bbb-ba7c-cdf9b04a68b7-1709290197088-cb26aa8c25b24b1aa5df8bb2edce7ea7.png"
+          height="30"
+          width="138"
+          alt="tiket-logo"
+        />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="hide">
+        ::CLOUDFLARE_ERROR_500S_BOX:: ::CLOUDFLARE_ERROR_1000S_BOX::
+      </div>
+      <image
+        src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/original/test-discovery/2025/05/16/8b1bc55e-47db-4ee1-abd5-dd8e28f91fb6-1747367608958-fa6f72663feb67a223e7de5c6d5aeee7.png"
+        alt="Request Failed"
+        class="image"
+      />
+      <div class="content">
+        <h2 class="title">Sorry, you've been blocked</h2>
+        <p class="question">Why am I blocked?</p>
+        <p class="answer">
+          Our security system detected unusual activity, which may happen if you
+          are using a VPN, connected to a shared or public network, or if your
+          device is showing suspicious browsing behavior. This security measure
+          helps us protect our services from automated access or misuse.
+        </p>
+        <p class="question">How to resolve this issue?</p>
+        <p class="answer">
+          To fix this, try turning off your VPN or proxy, disconnecting from
+          public or shared Wi-Fi, and using a private connection.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
